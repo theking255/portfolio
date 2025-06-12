@@ -132,23 +132,26 @@ for(let i = 0; i < navigationLinks.length; i++) {
 }
 
 
-src="https://cdn.emailjs.com/dist/email.min.js"
-// Initialize EmailJS
-  emailjs.init("HjQrRv_8NhNr5SfVRNvqV"); // ← Replace with your actual USER ID
 
-  // Get the form
-  const Form = document.getElementById("contact-form");
+type="text/javascript">
+  emailjs.init('sbcKL1NCYGP67xS0a')
+const btn = document.getElementById('button');
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+document.getElementById('form')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
 
-    emailjs.sendForm("service_7uweobf", "template_vcqueqo", this)
-      .then(() => {
-        alert("✅ Message sent successfully!");
-        form.reset();
-      })
-      .catch((error) => {
-        alert("❌ Failed to send message. Please try again.");
-        console.error("EmailJS Error:", error);
-      });
-  });
+   btn.value = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_vcqueqo';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Send Email';
+      alert('Sent!');
+    }, (err) => {
+      btn.value = 'Send Email';
+      alert(JSON.stringify(err));
+    });
+});
