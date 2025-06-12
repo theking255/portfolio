@@ -159,6 +159,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 //Form sending 
+(function () {
+        emailjs.init("sbcKL1NCYGP67xS0a");
+      })();
 const form = document.getElementById("form");
 const sub = document.querySelector(".form-btn");
 var i = 0 ;
