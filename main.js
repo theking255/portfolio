@@ -134,7 +134,7 @@ for(let i = 0; i < navigationLinks.length; i++) {
 
 src="https://cdn.emailjs.com/dist/email.min.js"
 // Initialize EmailJS
-  emailjs.init("sbcKL1NCYGP67xS0a"); // ← Replace with your actual USER ID
+  emailjs.init("HjQrRv_8NhNr5SfVRNvqV"); // ← Replace with your actual USER ID
 
   // Get the form
   const Form = document.getElementById("contact-form");
